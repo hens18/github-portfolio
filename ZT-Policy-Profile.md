@@ -5,13 +5,13 @@ The Policy Engine (PE) is the key decision-maker in a Zero Trust Architecture. I
 
 ## Policy Administrator (PA) - The Rulesetter
 
-The Policy Administrator is the bridge in communication for the "Brain" (Policy Engine) and the "Door" (Policy Enforcement Point). Once the PE makes a decision whether a request is valid or not, the PA translates the verdict into instructions for the PEP to allow or deny access. The PA manages session tokens, credentials, and configurations needed to operationalize the PE's ruling. Think of someone translating a list of rules from a higherup in a company and putting it neatly into one document per department of the company. 
+The Policy Administrator is the bridge in communication for the "Brain" (Policy Engine) and the "Door" (Policy Enforcement Point). Once the PE makes a decision whether a request is valid or not, the PA translates the verdict into instructions for the PEP to allow or deny access. The PA manages session tokens, credentials, and configurations needed to operationalize the PE's ruling. Think of someone translating a list of rules from a higher-up in a company and putting it neatly into one document per department of the company. 
 ## Policy Enforcement Point (PEP) - The Rule Setter
 
 
-The Policy Enforcement Point is the physical checkpoint that allows/denies traffic from users or devices and the requested resource (such as a web application or database). There is no thought process involved with the PEP, it simply acts based on instructions from the PA, which are orders decided upon by the PE. Every single request is processed through the PEP, making it the perfect boundary for Zero Trusts "never trust, always verify" principle.
+The Policy Enforcement Point is the physical checkpoint that allows/denies traffic from users or devices and the requested resource (such as a web application or database). There is no thought process involved with the PEP; it simply acts based on instructions from the PA, which are orders decided upon by the PE. Every single request is processed through the PEP, making it the perfect boundary for Zero Trust's "never trust, always verify" principle.
 # 2. Core Principle Application 
-Principle chosen: Verify Explicitly
+Principle chosen: Verify explicitly
 The PE never assumes trust based on a single factor. It actively checks every available signal on every request to ensure nothing is left unverified. 
 
 Example — Water Treatment Facility:
@@ -22,7 +22,7 @@ Supervisor Henry attempts to access chemical dosing control data at 11:45 PM fro
 | Location | Unknown off-site IP | ⚠️ Suspicious |
 | Time of Access | Outside normal shift hours | ⚠️ Anomalous |
 | Device Health | Unregistered personal laptop | ❌ Fail |
-PE Decision → DENY. Even though the user credentials being valid, the combination of  suspicious IP address location, anamolous timing, and an unregistered device, help guide us towards denying the request.  This scenario exemplifies the principle in Verify Explicitly that trust isn't granted based upon one successful check. Only when all signals meet the policy standards is when access is granted. 
+PE Decision → DENY. Even though the user credentials are valid, the combination of a suspicious IP address location, unusual timing, and an unregistered device leads us to deny the request.  This scenario exemplifies the principle in Verify Explicitly that trust isn't granted based upon one successful check. Access is granted only when all signals meet the policy standards. 
 
 # 3. Simplified Policy Table 
 
@@ -44,5 +44,3 @@ Filename: ZT-Policy-Profile.md
 
 Commit Message: Lab 6 - Zero Trust Policy Profile for IT335 Corporate Cybersecurity with Dr. Safi Mojidi
 Github URL - https://github.com/hens18/github-portfolio  
-
-Due Date: March 2, 2026
