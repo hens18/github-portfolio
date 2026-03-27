@@ -1,0 +1,54 @@
+from PIL import Image, ImageDraw, ImageFont
+
+catIM = Image.open("fat zophie.jpg")
+RedCircle = Image.open("Red Circle.png")
+RC = RedCircle.copy()
+Cintas = Image.open("Cintas.png")
+Ctas = Cintas.copy()
+
+catCopyIM = catIM.copy()
+croppedIm =catIM.crop((335, 345, 565, 560))
+catCopyIM.paste(croppedIm, (0, 0))
+catCopyIM.save("pasted_head.jpg")
+croppedIm.save("cropped_zophie.jpg")
+width, height = catIM.size
+print("Width:", width)
+print("Height:", height)
+
+from PIL import Image, ImageDraw, ImageFont
+
+# Load images
+Cintas = Image.open("Cintas.png")
+Ctas = Cintas.copy()
+
+RedCircle = Image.open("Red Circle.png")
+RC = RedCircle.copy()
+
+# Draw text
+draw = ImageDraw.Draw(Ctas)
+font = ImageFont.truetype("ComicSansMS3.ttf", 40)
+
+draw.text(
+    (10, 10),
+    "Dr Cintas was late",
+    fill=(255, 0, 255),
+    font=font
+)
+
+draw.text(
+    (10, 400),
+    "to reacting to this meme",
+    fill=(255, 0, 255),
+    font=font
+)
+new_width = int(RC.width * 0.8)
+new_height = int(RC.height * 0.8)
+RC = RC.resize((new_width, new_height))
+
+
+Ctas.paste(RC, (50, 35), RC)
+
+
+Ctas.save("Cintas_Lab.png")
+
+
